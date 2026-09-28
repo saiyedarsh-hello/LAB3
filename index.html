@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kindle Cloud Library | Book Information Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- Kindle App Container -->
+  <div class="kindle-app">
+
+    <!-- Top App Navigation -->
+    <header class="kindle-navbar">
+      <div class="brand-wrapper">
+        <div class="brand-icon">K</div>
+        <div>
+          <span class="brand-title">Kindle Oasis</span>
+          <span class="brand-badge">Cloud Reader</span>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Switch to Lab Frameset button -->
+        <a href="frameset_lab.html" class="nav-btn" title="View classic HTML Frameset (Lab 3 Syllabus format)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="9" y1="3" x2="9" y2="21"></line>
+          </svg>
+          <span>HTML &lt;frameset&gt; Version</span>
+        </a>
+
+        <button class="nav-btn primary" onclick="selectBook('clean-code')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <span>Continue Reading</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Lab Information Banner -->
+    <div class="lab-banner-info">
+      <span>
+        💡 <strong>Lab 3 Experiment:</strong> Two-part layout — Left side: <strong>Kindle Books List</strong>, Right side: <strong>Book Details (Slides in smoothly on click)</strong>.
+      </span>
+      <span>
+        Academic `<frameset>`: <a href="frameset_lab.html">Open Lab Frameset Mode</a>
+      </span>
+    </div>
+
+    <!-- Main Two-Part Split Workspace -->
+    <main class="main-workspace">
+
+      <!-- LEFT PART: Kindle Books List Panel -->
+      <aside class="left-books-panel" id="leftPanel">
+        <!-- Panel Header -->
+        <div class="panel-header">
+          <div class="panel-title-row">
+            <h2 class="panel-heading">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent-amber);">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+              My Library
+            </h2>
+            <span class="book-count-pill" id="booksCount">8 books</span>
+          </div>
+
+          <!-- Search Box -->
+          <div class="search-box">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input 
+              type="text" 
+              id="searchInput" 
+              class="search-input" 
+              placeholder="Search by title, author, genre..." 
+              autocomplete="off"
+            />
+          </div>
+
+          <!-- Category Filter Bar -->
+          <div class="category-filter-bar">
+            <button class="filter-chip active" data-category="all">All Books</button>
+            <button class="filter-chip" data-category="tech">Tech & Code</button>
+            <button class="filter-chip" data-category="mind">Mind & Habits</button>
+            <button class="filter-chip" data-category="ai">AI & Science</button>
+            <button class="filter-chip" data-category="scifi">Sci-Fi Classics</button>
+          </div>
+        </div>
+
+        <!-- Scrollable Kindle Books List -->
+        <div class="books-scroll-area" id="booksList">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </aside>
+
+      <!-- RIGHT PART: Book Information Panel (Slides In from Right) -->
+      <section class="right-details-panel" id="rightPanel">
+
+        <!-- Default Initial State when no book is actively focused -->
+        <div class="details-empty-state" id="detailsEmptyState">
+          <div class="empty-graphic">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </div>
+          <h2 class="empty-title">Select a Book to View Details</h2>
+          <p class="empty-subtitle">
+            Browse through your Kindle collection on the left and click <strong>"Details"</strong> to slide in complete specifications, chapters, editorial reviews, and excerpts.
+          </p>
+
+          <h3 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 1rem;">
+            Recommended Quick Picks
+          </h3>
+
+          <div class="featured-quick-picks">
+            <div class="quick-pick-card" onclick="selectBook('clean-code')">
+              <div style="font-size: 0.72rem; color: #60a5fa; font-weight: 700; margin-bottom: 0.25rem;">TECH & CODE</div>
+              <div style="font-weight: 700; font-size: 0.92rem; color: #fff;">Clean Code</div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.2rem;">Robert C. Martin</div>
+            </div>
+
+            <div class="quick-pick-card" onclick="selectBook('atomic-habits')">
+              <div style="font-size: 0.72rem; color: #fde047; font-weight: 700; margin-bottom: 0.25rem;">PRODUCTIVITY</div>
+              <div style="font-weight: 700; font-size: 0.92rem; color: #fff;">Atomic Habits</div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.2rem;">James Clear</div>
+            </div>
+
+            <div class="quick-pick-card" onclick="selectBook('project-hail-mary')">
+              <div style="font-size: 0.72rem; color: #f472b6; font-weight: 700; margin-bottom: 0.25rem;">SCI-FI</div>
+              <div style="font-weight: 700; font-size: 0.92rem; color: #fff;">Project Hail Mary</div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.2rem;">Andy Weir</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Book Details Container (Slides in from the right on selection) -->
+        <div class="book-details-container" id="bookDetailsContainer">
+          <!-- Populated dynamically via script.js -->
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Kindle Reader Interactive Modal -->
+  <div class="kindle-reader-modal" id="kindleReaderModal">
+    <div class="reader-device-frame">
+      <div class="reader-top-bar">
+        <div class="reader-book-info">
+          <span class="reader-title" id="readerTitle">Book Title</span>
+          <span class="reader-chapter-title" id="readerChapter">Chapter 1</span>
+        </div>
+
+        <div class="reader-theme-controls">
+          <span style="font-size: 0.75rem; color: #94a3b8; margin-right: 0.25rem;">Page Mode:</span>
+          <button class="theme-pill dark" data-theme="dark" title="Dark Mode"></button>
+          <button class="theme-pill sepia" data-theme="sepia" title="Sepia Mode"></button>
+          <button class="theme-pill white" data-theme="white" title="White Mode"></button>
+          <button class="btn-close-reader" id="btnCloseReader" title="Close Reader">&times;</button>
+        </div>
+      </div>
+
+      <div class="reader-canvas theme-dark" id="readerContent">
+        <!-- Chapter text dynamically loaded -->
+      </div>
+
+      <div class="reader-footer-bar">
+        <span id="readerProgress">Page 1 of 12</span>
+        <span>Kindle Paperwhite Simulation</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

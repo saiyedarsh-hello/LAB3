@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kindle Books List</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      overflow-y: auto !important;
+      background: #141721;
+      height: auto;
+      min-height: 100vh;
+    }
+    .frame-container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .book-card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame-container">
+    <!-- Header -->
+    <div class="panel-header" style="position: sticky; top: 0; background: #141721; z-index: 10; border-bottom: 1px solid rgba(255,255,255,0.08);">
+      <div class="panel-title-row">
+        <h2 class="panel-heading">
+          <span style="color: #f59e0b; font-weight: 800;">Kindle</span> Library
+        </h2>
+        <span class="book-count-pill">8 Books</span>
+      </div>
+
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="frameSearchInput" 
+          class="search-input" 
+          placeholder="Search Kindle books..." 
+          onkeyup="filterFrameBooks()"
+        />
+      </div>
+    </div>
+
+    <!-- Books List -->
+    <div class="books-scroll-area" id="frameBooksList">
+
+      <!-- Book 1 -->
+      <a href="frame_book_clean_code.html" target="rightFrame" class="book-card-link" onclick="markSelected(this)">
+        <div class="book-card">
+          <div class="book-thumb-wrapper">
+            <div class="book-cover-3d" style="background: linear-gradient(135deg, #1e3a8a, #0f172a); border: 1px solid #60a5fa40;">
+              <div style="font-size: 0.55rem; color: #60a5fa; font-weight: 700;">BESTSELLER</div>
+              <div>
+                <div class="thumb-title">Clean Code</div>
+                <div class="thumb-author">Robert Martin</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-meta">
+            <div>
+              <div class="book-header-line">
+                <span class="book-tag">Tech & Software</span>
+                <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">464p</span>
+              </div>
+              <h3 class="book-title">Clean Code</h3>
+              <p class="book-author">Robert C. Martin</p>
+              <div class="book-rating-row">
+                <span style="color: #f59e0b;">★★★★★</span>
+                <span class="rating-score">4.8</span>
+                <span class="rating-count">(14.8k)</span>
+              </div>
+            </div>
+            <div class="card-bottom-actions">
+              <span style="font-size: 0.7rem; color: var(--text-muted);">Kindle Edition</span>
+              <span class="btn-details">Details →</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Book 2 -->
+      <a href="frame_book_pragmatic.html" target="rightFrame" class="book-card-link" onclick="markSelected(this)">
+        <div class="book-card">
+          <div class="book-thumb-wrapper">
+            <div class="book-cover-3d" style="background: linear-gradient(135deg, #7c2d12, #1c1917); border: 1px solid #fb923c40;">
+              <div style="font-size: 0.55rem; color: #fb923c; font-weight: 700;">ESSENTIAL</div>
+              <div>
+                <div class="thumb-title">Pragmatic Prog.</div>
+                <div class="thumb-author">Hunt & Thomas</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-meta">
+            <div>
+              <div class="book-header-line">
+                <span class="book-tag">Tech & Software</span>
+                <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">352p</span>
+              </div>
+              <h3 class="book-title">The Pragmatic Programmer</h3>
+              <p class="book-author">David Thomas & Andrew Hunt</p>
+              <div class="book-rating-row">
+                <span style="color: #f59e0b;">★★★★★</span>
+                <span class="rating-score">4.9</span>
+                <span class="rating-count">(19.4k)</span>
+              </div>
+            </div>
+            <div class="card-bottom-actions">
+              <span style="font-size: 0.7rem; color: var(--text-muted);">Kindle Edition</span>
+              <span class="btn-details">Details →</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Book 3 -->
+      <a href="frame_book_atomic_habits.html" target="rightFrame" class="book-card-link" onclick="markSelected(this)">
+        <div class="book-card">
+          <div class="book-thumb-wrapper">
+            <div class="book-cover-3d" style="background: linear-gradient(135deg, #b45309, #451a03); border: 1px solid #fde04740;">
+              <div style="font-size: 0.55rem; color: #fde047; font-weight: 700;">#1 NYT</div>
+              <div>
+                <div class="thumb-title">Atomic Habits</div>
+                <div class="thumb-author">James Clear</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-meta">
+            <div>
+              <div class="book-header-line">
+                <span class="book-tag">Mind & Habits</span>
+                <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">320p</span>
+              </div>
+              <h3 class="book-title">Atomic Habits</h3>
+              <p class="book-author">James Clear</p>
+              <div class="book-rating-row">
+                <span style="color: #f59e0b;">★★★★★</span>
+                <span class="rating-score">4.9</span>
+                <span class="rating-count">(115k)</span>
+              </div>
+            </div>
+            <div class="card-bottom-actions">
+              <span style="font-size: 0.7rem; color: var(--text-muted);">Kindle Edition</span>
+              <span class="btn-details">Details →</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Book 4 -->
+      <a href="frame_book_dune.html" target="rightFrame" class="book-card-link" onclick="markSelected(this)">
+        <div class="book-card">
+          <div class="book-thumb-wrapper">
+            <div class="book-cover-3d" style="background: linear-gradient(135deg, #c2410c, #78350f); border: 1px solid #fdba7440;">
+              <div style="font-size: 0.55rem; color: #fdba74; font-weight: 700;">HUGO AWARD</div>
+              <div>
+                <div class="thumb-title">Dune</div>
+                <div class="thumb-author">Frank Herbert</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-meta">
+            <div>
+              <div class="book-header-line">
+                <span class="book-tag">Sci-Fi Classics</span>
+                <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">688p</span>
+              </div>
+              <h3 class="book-title">Dune</h3>
+              <p class="book-author">Frank Herbert</p>
+              <div class="book-rating-row">
+                <span style="color: #f59e0b;">★★★★★</span>
+                <span class="rating-score">4.7</span>
+                <span class="rating-count">(82.4k)</span>
+              </div>
+            </div>
+            <div class="card-bottom-actions">
+              <span style="font-size: 0.7rem; color: var(--text-muted);">Kindle Edition</span>
+              <span class="btn-details">Details →</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Book 5 -->
+      <a href="frame_book_ai.html" target="rightFrame" class="book-card-link" onclick="markSelected(this)">
+        <div class="book-card">
+          <div class="book-thumb-wrapper">
+            <div class="book-cover-3d" style="background: linear-gradient(135deg, #047857, #064e3b); border: 1px solid #6ee7b740;">
+              <div style="font-size: 0.55rem; color: #6ee7b7; font-weight: 700;">AI BIBLE</div>
+              <div>
+                <div class="thumb-title">Artificial Intel.</div>
+                <div class="thumb-author">Russell & Norvig</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-meta">
+            <div>
+              <div class="book-header-line">
+                <span class="book-tag">Science & AI</span>
+                <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">1152p</span>
+              </div>
+              <h3 class="book-title">Artificial Intelligence: A Modern Approach</h3>
+              <p class="book-author">Stuart Russell & Peter Norvig</p>
+              <div class="book-rating-row">
+                <span style="color: #f59e0b;">★★★★★</span>
+                <span class="rating-score">4.9</span>
+                <span class="rating-count">(9.8k)</span>
+              </div>
+            </div>
+            <div class="card-bottom-actions">
+              <span style="font-size: 0.7rem; color: var(--text-muted);">Kindle Edition</span>
+              <span class="btn-details">Details →</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Book 6 -->
+      <a href="frame_book_ddia.html" target="rightFrame" class="book-card-link" onclick="markSelected(this)">
+        <div class="book-card">
+          <div class="book-thumb-wrapper">
+            <div class="book-cover-3d" style="background: linear-gradient(135deg, #4338ca, #1e1b4b); border: 1px solid #a5b4fc40;">
+              <div style="font-size: 0.55rem; color: #a5b4fc; font-weight: 700;">SYSTEM DESIGN</div>
+              <div>
+                <div class="thumb-title">Data-Intensive</div>
+                <div class="thumb-author">M. Kleppmann</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-meta">
+            <div>
+              <div class="book-header-line">
+                <span class="book-tag">Tech & Software</span>
+                <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">616p</span>
+              </div>
+              <h3 class="book-title">Designing Data-Intensive Applications</h3>
+              <p class="book-author">Martin Kleppmann</p>
+              <div class="book-rating-row">
+                <span style="color: #f59e0b;">★★★★★</span>
+                <span class="rating-score">4.9</span>
+                <span class="rating-count">(22.1k)</span>
+              </div>
+            </div>
+            <div class="card-bottom-actions">
+              <span style="font-size: 0.7rem; color: var(--text-muted);">Kindle Edition</span>
+              <span class="btn-details">Details →</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Book 7 -->
+      <a href="frame_book_thinking.html" target="rightFrame" class="book-card-link" onclick="markSelected(this)">
+        <div class="book-card">
+          <div class="book-thumb-wrapper">
+            <div class="book-cover-3d" style="background: linear-gradient(135deg, #0e7490, #164e63); border: 1px solid #67e8f940;">
+              <div style="font-size: 0.55rem; color: #67e8f9; font-weight: 700;">NOBEL PRIZE</div>
+              <div>
+                <div class="thumb-title">Thinking Fast</div>
+                <div class="thumb-author">D. Kahneman</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-meta">
+            <div>
+              <div class="book-header-line">
+                <span class="book-tag">Mind & Habits</span>
+                <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">512p</span>
+              </div>
+              <h3 class="book-title">Thinking, Fast and Slow</h3>
+              <p class="book-author">Daniel Kahneman</p>
+              <div class="book-rating-row">
+                <span style="color: #f59e0b;">★★★★★</span>
+                <span class="rating-score">4.6</span>
+                <span class="rating-count">(67.4k)</span>
+              </div>
+            </div>
+            <div class="card-bottom-actions">
+              <span style="font-size: 0.7rem; color: var(--text-muted);">Kindle Edition</span>
+              <span class="btn-details">Details →</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Book 8 -->
+      <a href="frame_book_hail_mary.html" target="rightFrame" class="book-card-link" onclick="markSelected(this)">
+        <div class="book-card">
+          <div class="book-thumb-wrapper">
+            <div class="book-cover-3d" style="background: linear-gradient(135deg, #831843, #500724); border: 1px solid #f472b640;">
+              <div style="font-size: 0.55rem; color: #f472b6; font-weight: 700;">AUDIBLE PICK</div>
+              <div>
+                <div class="thumb-title">Hail Mary</div>
+                <div class="thumb-author">Andy Weir</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-meta">
+            <div>
+              <div class="book-header-line">
+                <span class="book-tag">Sci-Fi Classics</span>
+                <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">496p</span>
+              </div>
+              <h3 class="book-title">Project Hail Mary</h3>
+              <p class="book-author">Andy Weir</p>
+              <div class="book-rating-row">
+                <span style="color: #f59e0b;">★★★★★</span>
+                <span class="rating-score">4.9</span>
+                <span class="rating-count">(142k)</span>
+              </div>
+            </div>
+            <div class="card-bottom-actions">
+              <span style="font-size: 0.7rem; color: var(--text-muted);">Kindle Edition</span>
+              <span class="btn-details">Details →</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <script>
+    function markSelected(linkEl) {
+      document.querySelectorAll('.book-card').forEach(c => c.classList.remove('selected'));
+      const card = linkEl.querySelector('.book-card');
+      if (card) card.classList.add('selected');
+    }
+
+    function filterFrameBooks() {
+      const q = document.getElementById('frameSearchInput').value.toLowerCase();
+      document.querySelectorAll('.book-card-link').forEach(link => {
+        const text = link.innerText.toLowerCase();
+        link.style.display = text.includes(q) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+  <title>Lab 3: Book Information Website Using Frames</title>
+</head>
+
+<!-- Frameset divided into two parts: Left for Books List, Right for Book Information -->
+<frameset cols="35%, 65%" border="3" frameborder="1" framespacing="3" bordercolor="#f59e0b">
+  <!-- Left Part: Books List (Kindle Style) -->
+  <frame src="frame_left_list.html" name="leftFrame" scrolling="auto" noresize>
+
+  <!-- Right Part: Book Information Details -->
+  <frame src="frame_welcome.html" name="rightFrame" scrolling="auto">
+
+  <noframes>
+    <body>
+      <h2>Frames Are Not Supported by Your Browser</h2>
+      <p>This page requires frames to display the two-part Kindle book portal.</p>
+      <p>Please open <a href="index.html">index.html (Modern Interactive Version)</a> instead.</p>
+    </body>
+  </noframes>
+</frameset>
+</html>

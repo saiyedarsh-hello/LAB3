@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clean Code - Details</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #171922;
+      overflow-y: auto !important;
+      height: 100vh;
+      padding: 2rem 3rem 4rem 3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="book-details-container slide-in" style="display: flex;">
+    <div class="book-hero">
+      <div class="display-cover-wrapper">
+        <div class="display-cover-3d" style="background: linear-gradient(135deg, #1e3a8a, #0f172a); border: 1px solid #60a5fa40;">
+          <div class="cover-badge-top">BESTSELLER</div>
+          <div class="cover-center-content">
+            <div class="cover-main-title">Clean Code</div>
+            <div class="cover-sub-author">Robert C. Martin</div>
+          </div>
+          <div style="font-size: 0.7rem; color: rgba(255,255,255,0.7); text-align: right;">Kindle Oasis</div>
+        </div>
+      </div>
+
+      <div class="hero-details">
+        <div class="hero-tag-row">
+          <span class="badge-genre">Tech & Software</span>
+          <span class="badge-kindle-edition">Kindle Edition</span>
+          <span style="font-size: 0.75rem; color: #10b981; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); padding: 0.2rem 0.65rem; border-radius: 999px; font-weight: 600;">✓ In Your Library</span>
+        </div>
+
+        <h1 class="hero-title">Clean Code</h1>
+        <p class="hero-subtitle">A Handbook of Agile Software Craftsmanship</p>
+        <div class="hero-author-line">by <strong>Robert C. Martin (Uncle Bob)</strong> (Author)</div>
+
+        <div class="hero-rating-block">
+          <div class="rating-stars-large" style="color: #f59e0b;">★★★★★</div>
+          <span class="rating-score-large">4.8</span>
+          <span class="rating-reviews-count">14,890 global ratings</span>
+        </div>
+
+        <div class="hero-cta-group">
+          <button class="btn-kindle-action read-sample" onclick="alert('Opening Kindle E-Reader for Clean Code...')">
+            📖 Read Sample Now
+          </button>
+          <button class="btn-kindle-action secondary" onclick="alert('Added to your Wishlist!')">
+            ⭐ Wishlist
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-specs-grid">
+      <div class="spec-tile"><span class="spec-label">Print Length</span><span class="spec-value">464 pages</span></div>
+      <div class="spec-tile"><span class="spec-label">Read Time</span><span class="spec-value">8h 15m</span></div>
+      <div class="spec-tile"><span class="spec-label">Language</span><span class="spec-value">English</span></div>
+      <div class="spec-tile"><span class="spec-label">Publisher</span><span class="spec-value">Prentice Hall</span></div>
+      <div class="spec-tile"><span class="spec-label">Publication</span><span class="spec-value">August 2008</span></div>
+      <div class="spec-tile"><span class="spec-label">ISBN-13</span><span class="spec-value">978-0132350884</span></div>
+    </div>
+
+    <div class="details-section">
+      <h2 class="section-title">Book Synopsis & Overview</h2>
+      <div class="synopsis-text">
+        <p>Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code.</p>
+        <p>Noted software expert Robert C. Martin presents a revolutionary paradigm with Clean Code: A Handbook of Agile Software Craftsmanship. Martin distills the best agile practice of cleaning code "on the fly" into a book that will instill within you the values of a software craftsman and make you a better programmer.</p>
+      </div>
+    </div>
+
+    <div class="details-section">
+      <h2 class="section-title">Key Highlights</h2>
+      <ul class="highlights-list">
+        <li class="highlight-item">The Boy Scout Rule: "Leave the campground cleaner than you found it."</li>
+        <li class="highlight-item">Meaningful Names: Reveal intent and avoid mental mapping.</li>
+        <li class="highlight-item">Functions: Should do one thing, do it well, and do it only.</li>
+        <li class="highlight-item">TDD: Three laws of Test-Driven Development.</li>
+      </ul>
+    </div>
+
+    <div class="details-section">
+      <h2 class="section-title">Table of Contents</h2>
+      <div class="chapters-accordion">
+        <div class="chapter-row"><div><span class="chapter-num">01</span><span class="chapter-title">Clean Code: Philosophy & Craftsmanship</span></div><span class="chapter-time">25 min</span></div>
+        <div class="chapter-row"><div><span class="chapter-num">02</span><span class="chapter-title">Meaningful Names</span></div><span class="chapter-time">35 min</span></div>
+        <div class="chapter-row"><div><span class="chapter-num">03</span><span class="chapter-title">Functions & Single Responsibility</span></div><span class="chapter-time">45 min</span></div>
+        <div class="chapter-row"><div><span class="chapter-num">04</span><span class="chapter-title">Comments: Good & Bad</span></div><span class="chapter-time">30 min</span></div>
+        <div class="chapter-row"><div><span class="chapter-num">05</span><span class="chapter-title">Error Handling & Clean Exceptions</span></div><span class="chapter-time">40 min</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
